@@ -1,0 +1,55 @@
+<%
+sub load_session("stu.txt")
+    num(1000),name(1000),norm(1000),exam(1000)
+    set fb = Server.CreateObject("Scripting.FileSystemObject")
+    set readfile = fb.opentextfile("stu.txt")
+    n = 0
+    while not readfile.atendofstream
+        str = readfile.readline
+        tempArr = split(str," ")
+        t = 0
+        for i = 0 to ubound(tempArr)
+            if tempArr(i) <> " " then
+                arr(t) = tempArr(i)
+                t = t + 1
+            end if
+        next
+        num(n) = arr(0)
+        name(n) = arr(1)
+        norm(n) = arr(2)
+        exam(n) = arr(3)
+        n = n + 1
+    wend 
+    readfile.close
+
+    session.timeout = 480
+    session("n") = n
+    session("num") = num
+    session("name") = name
+    session("norm") = norm
+    session("exam") = exam
+end sub
+%>
+<center>
+    学生信息
+    <table border = 1>
+        <tr>
+            <td align=center>学号</td>
+            <td align=center>姓名</td>
+            <td align=center>平时</td>
+            <td align=center>期末</td>
+        </tr>
+        <%
+            for i = 0 to n - 1 
+        %>
+        <tr>
+            <td align=center><% = session("num")(i) %></td>
+            <td align=center><% = session("name")(i) %></td>
+            <td align=center><% = session("norm")(i) %></td>
+            <td align=center><% = session("exam")(i)%></td>
+        </tr>
+        <%
+        next 
+        %>
+    </table>
+</center>
