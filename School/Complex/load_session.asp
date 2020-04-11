@@ -1,4 +1,3 @@
-
 <!--#include file = "load_session.txt"-->
 <%
     load_session "student.txt"
