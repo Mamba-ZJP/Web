@@ -1,6 +1,13 @@
 <script language = javascript>
     function isNum(str){
-        for(i = 0;i < str.length;++i){
+       if(str[0] == '+'){
+           for(i = 0;i < str.length - 1;++i) str[i] = str[i + 1];
+           return true;
+       }
+       if(str[0] == '-' ){ i = 1;}
+       else {i = 0;}
+
+        for(;i < str.length;++i){
             if(str[i] < '0' || str[i] > '9') return false;
         }
         return true;
@@ -15,9 +22,7 @@
         else if(!isNum(document.form1.a.value)){
             alert("学号必须是数字"); return false;
         }
-        else if(document.form1.b.value == ""){
-            alert("姓名不能为空"); return false;
-        }
+        
         else if(document.form1.b.value.length > 4){
             alert("姓名不能过长"); return false;
         }
@@ -27,7 +32,7 @@
         else if(!isNum(document.form1.c.value)){
             alert("平时成绩必须是数字"); return false;
         }
-        else if(parseInt(document.form1.c.value) < 0 || parseInt(document.form1.c.value) > 100){
+        else if(Number(document.form1.c.value) < 0 || Number(document.form1.c.value) > 100){
             alert("平时成绩必须在0~100内"); return false;
         }
         else if(document.form1.d.value == ""){
@@ -36,7 +41,7 @@
         else if(!isNum(document.form1.d.value)){
             alert("期末成绩必须是数字"); return false;
         }
-        else if(parseInt(document.form1.d.value) < 0 || parseInt(document.form1.d.value) > 100){
+        else if(Number(document.form1.d.value) < 0 || Number(document.form1.d.value) > 100){
             alert("期末成绩必须在0~100内"); return false;
         }
         return true;
