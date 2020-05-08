@@ -1,3 +1,4 @@
+  
 <script language = javascript>
     function isNum(str){
        if(str[0] == '+'){
@@ -6,12 +7,35 @@
        }
        if(str[0] == '-' ){ i = 1;}
        else {i = 0;}
-
         for(;i < str.length;++i){
             if(str[i] < '0' || str[i] > '9') return false;
         }
         return true;
     }
+    
+    function check_socre(str){
+        n = s.length;
+        //检查是否为0
+        if(n == 1 && s[0] == '0') return true;
+
+        //检查前缀是否为0
+        if(s[0] == '0') return false;
+
+        //只有一个符号
+        if(n == 1 && (s[0] == '+' || s[0] == '-')) return false;
+
+        //只有符号和0
+        if((s[0] == '+' || s[0] == '-') && s[1] == '0') return false;
+
+        //第一位既不是符号 也不是数字
+        if(s[0] != '+' && s[0] != '-' && !(s[0] >= '0' && s[0] <= '9')) return false;
+        
+        //依次检查
+        for(i = 1;i < n;++i)
+            if(s[i] < '0' || s[i] > '9') return false;
+        return true;
+    }
+
     function check_num(){
         if(document.form1.a.value == ""){
             alert("学号不能为空"); return false;
@@ -23,13 +47,13 @@
             alert("学号必须是数字"); return false;
         }
         
-        else if(document.form1.b.value.length > 4){
-            alert("姓名不能过长"); return false;
+        else if(document.form1.b.value.length > 4 || document.form1.b.value.length < 2){
+            alert("姓名不能大于4个汉字或者小于2个汉字"); return false;
         }
         else if(document.form1.c.value == ""){
             alert("平时成绩不能为空"); return false;
         }
-        else if(!isNum(document.form1.c.value)){
+        else if(!check_socre(document.form1.c.value)){
             alert("平时成绩必须是数字"); return false;
         }
         else if(Number(document.form1.c.value) < 0 || Number(document.form1.c.value) > 100){
@@ -38,7 +62,7 @@
         else if(document.form1.d.value == ""){
             alert("期末成绩不能为空"); return false;
         }
-        else if(!isNum(document.form1.d.value)){
+        else if(!check_socre(document.form1.d.value)){
             alert("期末成绩必须是数字"); return false;
         }
         else if(Number(document.form1.d.value) < 0 || Number(document.form1.d.value) > 100){
