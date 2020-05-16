@@ -1,0 +1,32 @@
+<%
+sub load_session(filename)
+    dim arr(100),num(1000),name(1000),norm(1000),exam(1000)
+    set fb = Server.CreateObject("Scripting.FileSystemObject")
+    set readfile = fb.opentextfile(filename)
+    n = 0
+    while not readfile.atendofstream
+        str = readfile.readline
+        tempArr = split(str," ")
+        t = 0
+        for i = 0 to ubound(tempArr)
+            if tempArr(i) <> " " then
+                arr(t) = tempArr(i)
+                t = t + 1
+            end if
+        next
+        num(n) = arr(0)
+        name(n) = arr(1)
+        norm(n) = arr(2)
+        exam(n) = arr(3)
+        n = n + 1
+    wend 
+    readfile.close
+
+    session.timeout = 480
+    session("n") = n
+    session("num") = num
+    session("name") = name
+    session("norm") = norm
+    session("exam") = exam
+end sub
+%>
