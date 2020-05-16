@@ -1,0 +1,32 @@
+<%
+    sub show_session
+    if session("n") = "" then
+        response.write "session empty"
+    else
+        n = session("n")
+        %>
+            <center>
+               学生信息
+            <table border= 1>
+                <tr>
+                    <td align=center>学号</td>
+                    <td align=center>姓名</td>
+                    <td align=center>平时成绩</td>
+                    <td align=center>考试成绩</td>
+                </tr>
+                <%for i = 0 to n - 1%>
+                <tr>
+                    
+                    <td align=center><% = session("num")(i) %></td>
+                    <td align=center><% = session("name")(i) %></td>
+                    <td align=center><% = session("norm")(i) %></td>
+                    <td align=center><% = session("exam")(i) %></td>
+                </tr>
+                <%next%>  
+                </table>
+            </center>
+        
+    <%
+    end if
+    end sub
+%>
