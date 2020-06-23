@@ -1,51 +1,41 @@
-
-<!--#include file = "conn.asp"-->
 <%
-Response.ContentType = "application/vnd.ms-excel"
-Response.AddHeader "Content-Disposition","attachment;filename = data.xls"
-strsql = "select * from data"
-set rs = db.execute(strsql)
+
+set x1App = CreateObject("Excel.Application")
+strsource = server.MapPath("book.xlsx")
+set x1book = x1App.WorkBooks.Open(strsource)
+set x1sheet = x1book.Worksheets(1)
+i = 1
+response.write "<center>"
+response.write "<table border = '1'>"
+
 %>
-<center>
-    <table border = "1">
-        <tr>
-            <td align="center">编号</td>
-            <td align="center">品种1皮壳中含油料粒量的含量</td>
-            <td align="center">品种1皮壳中含油料粒量综合评价</td>
-            <td align="center">品种1油（皂）脚中含油率含量</td>
-            <td align="center">品种1油（皂）脚中含油率综合评价</td>
-            <td align="center">品种1废白土中含油率的含量</td>
-            <td align="center">品种1废白土中含油率综合评价</td>
+<%
+while x1sheet.cells(i,1) <> ""
+    response.write "<tr>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,1) & "</td>"
 
-            <td align="center">品种2皮壳中含油料粒量的含量</td>
-            <td align="center">品种2皮壳中含油料粒量综合评价</td>
-            <td align="center">品种2油（皂）脚中含油率含量</td>
-            <td align="center">品种2油（皂）脚中含油率综合评价</td>
-            <td align="center">品种2废白土中含油率的含量</td>
-            <td align="center">品种2废白土中含油率综合评价</td>
-        </tr>
-        <%
-            while not rs.eof
-        %>
-        <tr>
-          <td align = "center"><%=rs(0)%></td>
-            <td align = "center"><%=rs(1)%></td>
-            <td align = "center"><%=rs(2)%></td>
-            <td align = "center"><%=rs(3)%></td>
-            <td align = "center"><%=rs(4)%></td>
-            <td align = "center"><%=rs(5)%></td>
-            <td align = "center"><%=rs(6)%></td>
+    response.write "<td align='center'>" & x1sheet.Cells(i,2) & "</td>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,3) & "</td>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,4) & "</td>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,5) & "</td>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,6) & "</td>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,7) & "</td>"
+    
+    response.write "<td align='center'>" & x1sheet.Cells(i,8) & "</td>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,9) & "</td>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,10) & "</td>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,11) & "</td>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,12) & "</td>"
+    response.write "<td align='center'>" & x1sheet.Cells(i,13) & "</td>"
+    response.write "</tr>"
+    i = i + 1
+wend
 
-            <td align = "center"><%=rs(7)%></td>
-            <td align = "center"><%=rs(8)%></td>
-            <td align = "center"><%=rs(9)%></td>
-            <td align = "center"><%=rs(10)%></td>
-            <td align = "center"><%=rs(11)%></td>
-            <td align = "center"><%=rs(12)%></td>
-        </tr>
-        <%
-            rs.movenext
-            wend
-        %>
-    </table>
-</center>
+response.write "</table>"
+response.write "</center>"
+
+set x1sheet = nothing
+set x1book = nothing
+x1App.quit
+
+%>
