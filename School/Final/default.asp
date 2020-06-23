@@ -1,4 +1,4 @@
-<frameset cols = "30%,*">
+<frameset rows = "8%,*">
     <frame name = "left" src = "menu.asp" target = "right">
     <frame name = "right" src = "search.asp">
         <noframes>
