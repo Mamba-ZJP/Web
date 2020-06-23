@@ -5,7 +5,7 @@
     set rs = db.execute(sqlstr)
 %>
 <center>
-学生记录如下
+调查记录如下
     <table border = 1>
         <tr>
             <td align="center">编号</td>
@@ -39,7 +39,7 @@
             <td><%=rs(10)%></td>
             <td><%=rs(11)%></td>
             <td><%=rs(12)%></td>
-            <td><%=rs(13)%></td>
+            
         </tr>
         <% 
             rs.movenext 
