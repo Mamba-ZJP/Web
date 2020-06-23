@@ -2,10 +2,10 @@
 <%
     num = request.form("num")
     
-    sqlstr = "select * from st where num = '"&num&"' "
+    sqlstr = "select * from data where num = '"&num&"' "
     set a = db.execute(sqlstr)
     if not a.eof then
-        sqlstr = "delete * from st where num = '"&num&"' "
+        sqlstr = "delete * from data where num = '"&num&"' "
         db.execute sqlstr
 %>
 <script language = javascript>
