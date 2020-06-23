@@ -1,5 +1,3 @@
-
-
 <center>
     添加记录
     <table border = 1>
