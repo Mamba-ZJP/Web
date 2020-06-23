@@ -1,7 +1,7 @@
 <!--#include file = "conn.asp"-->
 <%
     num = cstr(request.form("num"))
-    sqlstr = "select * from st where num = '"&num&"' "
+    sqlstr = "select * from data where num = '"&num&"' "
     set rs = db.execute(sqlstr)
     
     if not rs.eof then
@@ -44,7 +44,7 @@
             <td><%=rs(10)%></td>
             <td><%=rs(11)%></td>
             <td><%=rs(12)%></td>
-            <td><%=rs(13)%></td>
+            
         </tr>
     </table>
 </center>
