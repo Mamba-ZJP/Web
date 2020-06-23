@@ -1,7 +1,7 @@
 <!--#include file = "conn.asp"-->
 
     num = cstr(request.form("num"))
-    sqlstr = "select * from st where num = '"&num&"' "
+    sqlstr = "select * from data where num = '"&num&"' "
     set rs = db.execute(sqlstr)
   
     if rs.eof then
@@ -36,19 +36,19 @@
             </tr>
             <tr>
                 <td><input type = text name = "num" value = <%=rs(0)%> ></td>
-                <td><input type = text name = "1_A_Vol" value = <%=rs(1)%> ></td>
-                <td><input type = text name = "1_A_Com" value = <%=rs(2)%> ></td>
-                <td><input type = text name = "1_B_Vol" value = <%=rs(3)%> ></td>
-                <td><input type = text name = "1_B_Com" value = <%=rs(4)%> ></td>
-                <td><input type = text name = "1_C_Vol" value = <%=rs(5)%> ></td>
-                <td><input type = text name = "1_C_Vol" value = <%=rs(6)%> ></td>
+                <td><input type = text name = "F_A_Vol" value = <%=rs(1)%> ></td>
+                <td><input type = text name = "F_A_Com" value = <%=rs(2)%> ></td>
+                <td><input type = text name = "F_B_Vol" value = <%=rs(3)%> ></td>
+                <td><input type = text name = "F_B_Com" value = <%=rs(4)%> ></td>
+                <td><input type = text name = "F_C_Vol" value = <%=rs(5)%> ></td>
+                <td><input type = text name = "F_C_Vol" value = <%=rs(6)%> ></td>
 
-                <td><input type = text name = "1_A_Vol" value = <%=rs(7)%> ></td>
-                <td><input type = text name = "1_A_Com" value = <%=rs(8)%> ></td>
-                <td><input type = text name = "1_B_Vol" value = <%=rs(9)%> ></td>
-                <td><input type = text name = "1_B_Com" value = <%=rs(10)%> ></td>
-                <td><input type = text name = "1_C_Vol" value = <%=rs(11)%> ></td>
-                <td><input type = text name = "1_C_Vol" value = <%=rs(12)%> ></td>
+                <td><input type = text name = "S_A_Vol" value = <%=rs(7)%> ></td>
+                <td><input type = text name = "S_A_Com" value = <%=rs(8)%> ></td>
+                <td><input type = text name = "S_B_Vol" value = <%=rs(9)%> ></td>
+                <td><input type = text name = "S_B_Com" value = <%=rs(10)%> ></td>
+                <td><input type = text name = "S_C_Vol" value = <%=rs(11)%> ></td>
+                <td><input type = text name = "S_C_Vol" value = <%=rs(12)%> ></td>
             </tr>
             <tr>
                 <td colspan="4" align=center><input type = "submit" name = "s" value = "提交"></td>
