@@ -1,12 +1,12 @@
 <!--#include file = "conn.asp"-->
-
+<!--#include file = "s7.txt"-->
 <%
     sqlstr = "select * from data"
     set rs = db.execute(sqlstr)
 %>
 <center>
 调查记录如下
-    <table border = 1>
+    <table border = "1" cellspacing = "0" cellpadding = "0" class = "ms-classic4-main">
         <tr>
             <td align="center">编号</td>
             <td align="center">品种1皮壳中含油料粒量的含量</td>
@@ -25,20 +25,20 @@
         </tr>
         <%do while not rs.eof%>
         <tr>
-            <td><%=rs(0)%></td>
-            <td><%=rs(1)%></td>
-            <td><%=rs(2)%></td>
-            <td><%=rs(3)%></td>
-            <td><%=rs(4)%></td>
-            <td><%=rs(5)%></td>
-            <td><%=rs(6)%></td>
+            <td align="center"><%=rs(0)%></td>
+            <td align="center"><%=rs(1)%></td>
+            <td align="center"><%=rs(2)%></td>
+            <td align="center"><%=rs(3)%></td>
+            <td align="center"><%=rs(4)%></td>
+            <td align="center"><%=rs(5)%></td>
+            <td align="center"><%=rs(6)%></td>
 
-            <td><%=rs(7)%></td>
-            <td><%=rs(8)%></td>
-            <td><%=rs(9)%></td>
-            <td><%=rs(10)%></td>
-            <td><%=rs(11)%></td>
-            <td><%=rs(12)%></td>
+            <td align="center"><%=rs(7)%></td>
+            <td align="center"><%=rs(8)%></td>
+            <td align="center"> <%=rs(9)%></td>
+            <td align="center"><%=rs(10)%></td>
+            <td align="center"><%=rs(11)%></td>
+            <td align="center"><%=rs(12)%></td>
             
         </tr>
         <% 
