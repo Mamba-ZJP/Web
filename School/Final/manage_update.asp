@@ -14,71 +14,70 @@
 <% else session("num") = rs(0) %>
 
 <center>
-    ¸üÐÂ¼ÇÂ¼
+    æ›´æ–°è®°å½•
         <table border = 1>
             <form name = "form1" method = "POST" action="update2.asp" >
-                <tr>
-                    <td align="center">±àºÅ</td>
+                 <tr>
+                    <td align="center">ç¼–å·</td>
                     <td align="center"><input type = text name = "num" value = <%=rs(0)%> ></td>
                 </tr>
+                
                 <tr>
-                    <td align="center">Æ·ÖÖ1Æ¤¿ÇÖÐº¬ÓÍÁÏÁ£Á¿µÄº¬Á¿</td>
+                    <td align="center">å“ç§1çš®å£³ä¸­å«æ²¹æ–™ç²’é‡çš„å«é‡</td>
                     <td align="center"><input type = text name = "F_A_Vol" value = <%=rs(1)%> ></td>
                 </tr>
                 <tr>
-                    <td align="center">Æ·ÖÖ1Æ¤¿ÇÖÐº¬ÓÍÁÏÁ£Á¿×ÛºÏÆÀ¼Û</td>
-                    <td align="center"><input type = text name = "F_A_Vol" value = <%=rs(1)%> ></td>
-                </tr>
-                <tr>
-                    <td align="center">Æ·ÖÖ1ÓÍ£¨Ôí£©½ÅÖÐº¬ÓÍÂÊº¬Á¿</td>
+                    <td align="center">å“ç§1çš®å£³ä¸­å«æ²¹æ–™ç²’é‡ç»¼åˆè¯„ä»·</td>
                     <td align="center"><input type = text name = "F_A_Com" value = <%=rs(2)%> ></td>
                 </tr>
                 <tr>
-                    <td align="center">Æ·ÖÖ1ÓÍ£¨Ôí£©½ÅÖÐº¬ÓÍÂÊ×ÛºÏÆÀ¼Û</td>
+                    <td align="center">å“ç§1æ²¹ï¼ˆçš‚ï¼‰è„šä¸­å«æ²¹çŽ‡å«é‡</td>
                     <td align="center"><input type = text name = "F_B_Vol" value = <%=rs(3)%> ></td>
                 </tr>
                 <tr>
-                    <td align="center">Æ·ÖÖ1·Ï°×ÍÁÖÐº¬ÓÍÂÊµÄº¬Á¿</td>
+                    <td align="center">å“ç§1æ²¹ï¼ˆçš‚ï¼‰è„šä¸­å«æ²¹çŽ‡ç»¼åˆè¯„ä»·</td>
+                    <td align="center"><input type = text name = "F_B_Com" value = <%=rs(4)%> ></td>
+                </tr>
+    
+                <tr>
+                    <td align="center">å“ç§1åºŸç™½åœŸä¸­å«æ²¹çŽ‡çš„å«é‡</td>
                     <td align="center"><input type = text name = "F_C_Vol" value = <%=rs(5)%> ></td>
                 </tr>
                 <tr>
-                    <td align="center">Æ·ÖÖ1·Ï°×ÍÁÖÐº¬ÓÍÂÊ×ÛºÏÆÀ¼Û</td>
+                    <td align="center">å“ç§1åºŸç™½åœŸä¸­å«æ²¹çŽ‡ç»¼åˆè¯„ä»·</td>
                     <td align="center"><input type = text name = "F_C_Com" value = <%=rs(6)%> ></td>
                 </tr>
     
     
     
                 <tr>
-                    <td align="center">Æ·ÖÖ2Æ¤¿ÇÖÐº¬ÓÍÁÏÁ£Á¿µÄº¬Á¿</td>
+                    <td align="center">å“ç§2çš®å£³ä¸­å«æ²¹æ–™ç²’é‡çš„å«é‡</td>
                     <td align="center"><input type = text name = "S_A_Vol" value = <%=rs(7)%>></td>
                 
                 </tr>
                 <tr>
-                    <td align="center">Æ·ÖÖ2Æ¤¿ÇÖÐº¬ÓÍÁÏÁ£Á¿×ÛºÏÆÀ¼Û</td>
+                    <td align="center">å“ç§2çš®å£³ä¸­å«æ²¹æ–™ç²’é‡ç»¼åˆè¯„ä»·</td>
                     <td align="center"><input type = text name = "S_A_Com" value = <%=rs(8)%> ></td>
                 </tr>
                 <tr>
-                    <td align="center">Æ·ÖÖ2ÓÍ£¨Ôí£©½ÅÖÐº¬ÓÍÂÊº¬Á¿</td>
+                    <td align="center">å“ç§2æ²¹ï¼ˆçš‚ï¼‰è„šä¸­å«æ²¹çŽ‡å«é‡</td>
                     <td align="center"><input type = text name = "S_B_Vol" value = <%=rs(9)%> ></td>
                 </tr>
                 <tr>
-                    <td align="center">Æ·ÖÖ2ÓÍ£¨Ôí£©½ÅÖÐº¬ÓÍÂÊ×ÛºÏÆÀ¼Û</td>
+                    <td align="center">å“ç§2æ²¹ï¼ˆçš‚ï¼‰è„šä¸­å«æ²¹çŽ‡ç»¼åˆè¯„ä»·</td>
                     <td align="center"><input type = text name = "S_B_Com" value = <%=rs(10)%> ></td>
                 </tr>
                 <tr>
-                    <td align="center">Æ·ÖÖ2·Ï°×ÍÁÖÐº¬ÓÍÂÊµÄº¬Á¿</td>
+                    <td align="center">å“ç§2åºŸç™½åœŸä¸­å«æ²¹çŽ‡çš„å«é‡</td>
                     <td align="center"><input type = text name = "S_C_Vol" value = <%=rs(11)%> ></td>
                 </tr>
                 <tr>
-                    <td align="center">Æ·ÖÖ2·Ï°×ÍÁÖÐº¬ÓÍÂÊ×ÛºÏÆÀ¼Û</td>
-                    <td align="center"><input type = text name = "S_C_Vol" value = <%=rs(12)%> ></td>
-                </tr>
-    
-                
-        
+                    <td align="center">å“ç§2åºŸç™½åœŸä¸­å«æ²¹çŽ‡ç»¼åˆè¯„ä»·</td>
+                    <td align="center"><input type = text name = "S_C_Com" value = <%=rs(12)%> ></td>
+                </tr>               
           
             <tr>
-                <td colspan="2" align=center><input type = "submit" name = "s" value = "¸üÐÂ"></td>
+                <td colspan="2" align=center><input type = "submit" name = "s" value = "æ›´æ–°"></td>
             </tr>
        </form>
     </table>
