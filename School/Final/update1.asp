@@ -77,7 +77,7 @@
                 </tr>               
           
             <tr>
-                <td colspan="2" align=center><input type = "submit" name = "s" value = "����"></td>
+                <td colspan="2" align=center><input type = "submit" name = "s" value = "更新"></td>
             </tr>
        </form>
     </table>
