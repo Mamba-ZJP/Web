@@ -5,6 +5,30 @@ strsql = "select * from data"
 rs.open strsql,db,1
 %>
 
+<style>
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+        }
+        #myBox {
+            display: inline-block;
+            margin: auto;
+        }
+    </style>
+<body>
+    <div id="myBox">
+
 <div align = "center">
     <font size = "8" color = red>
         <b>调查记录</b>
